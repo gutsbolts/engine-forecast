@@ -1,0 +1,36 @@
+h1. EngineForecast
+  
+With the engine-forecast gem you can forecast your automobile engine's efficiency by supplying a set of latitude and longitude coordinates. Based on these coordinates the gem collects meteorological and elevation observations from NOAA and the USGS, then crunches this data to come up with the following set of calculations:
+
+* AE Relative Horsepower
+* Dyno Correction Factor	  
+* Air Density
+* Density Altitude
+* ICAO Relative Air Density
+* Virtual Temperature
+* Absolute Air Pressure
+* Vapor Pressure
+* Relative Humidity
+
+The calculations in this gem are modeled after Richard Shelquist's Engine Tuner's Calculator, but have been re-factored to be more ruby-like. I urge you to read his technical articles on Density Altitude and Corrected Horsepower for detailed explanations of these concepts.
+
+h2. Quick Examples
+
+<pre>
+  calculations = EngineForecast.calculate 30.267153, -97.7430608 
+  calculations.relative_horsepower
+    #=> 2374
+  calculations.relative_humidity
+    #=> 1231
+</pre>
+
+h2. Dependencies
+
+* noaa
+* savon
+* mocha
+
+h2. Roadmap
+
+* metric flag to toggle English vs. Metric results
+* improve test classes

@@ -1,0 +1,83 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://www.weather.gov:80/xml/current_obs/KATT.xml
+    body: 
+    headers: 
+      accept: 
+      - "*/*"
+      host: 
+      - www.weather.gov
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Sun, 13 Jun 2010 22:56:43 GMT
+      last-modified: 
+      - Sun, 13 Jun 2010 21:02:28 GMT
+      content-type: 
+      - text/xml
+      via: 
+      - 1.1 nws-hq-cache02 (NetCache NetApp/6.0.7)
+      date: 
+      - Sun, 13 Jun 2010 22:01:43 GMT
+      server: 
+      - Apache
+      content-length: 
+      - "2088"
+      age: 
+      - "0"
+      cache-control: 
+      - max-age=3300
+      vary: 
+      - Accept-Encoding
+    body: |
+      <?xml version="1.0" encoding="ISO-8859-1"?> 
+      <?xml-stylesheet href="latest_ob.xsl" type="text/xsl"?>
+      <current_observation version="1.0"
+      	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      	 xsi:noNamespaceSchemaLocation="http://www.weather.gov/view/current_observation.xsd">
+      	<credit>NOAA's National Weather Service</credit>
+      	<credit_URL>http://weather.gov/</credit_URL>
+      	<image>
+      		<url>http://weather.gov/images/xml_logo.gif</url>
+      		<title>NOAA's National Weather Service</title>
+      		<link>http://weather.gov</link>
+      	</image>
+      	<suggested_pickup>15 minutes after the hour</suggested_pickup>
+      	<suggested_pickup_period>60</suggested_pickup_period>
+      	<location>Camp Mabry / Austin City, TX</location>
+      	<station_id>KATT</station_id>
+      	<latitude>30.32</latitude>
+      	<longitude>-97.77</longitude>
+      	<observation_time>Last Updated on Jun 13 2010, 3:51 pm CDT</observation_time>
+              <observation_time_rfc822>Sun, 13 Jun 2010 15:51:00 -0500</observation_time_rfc822>
+      	<weather>Mostly Cloudy</weather>
+      	<temperature_string>91.0 F (32.8 C)</temperature_string>
+      	<temp_f>91.0</temp_f>
+      	<temp_c>32.8</temp_c>
+      	<relative_humidity>54</relative_humidity>
+      	<pressure_string>1013.4 mb</pressure_string>
+      	<pressure_mb>1013.4</pressure_mb>
+      	<pressure_in>29.97</pressure_in>
+      	<dewpoint_string>72.0 F (22.2 C)</dewpoint_string>
+      	<dewpoint_f>72.0</dewpoint_f>
+      	<dewpoint_c>22.2</dewpoint_c>
+      	<heat_index_string>98 F (37 C)</heat_index_string>
+            	<heat_index_f>98</heat_index_f>
+            	<heat_index_c>37</heat_index_c>
+      	<visibility_mi>10.00</visibility_mi>
+       	<icon_url_base>http://weather.gov/weather/images/fcicons/</icon_url_base>
+      	<two_day_history_url>http://www.weather.gov/data/obhistory/KATT.html</two_day_history_url>
+      	<icon_url_name>bkn.jpg</icon_url_name>
+      	<ob_url>http://www.nws.noaa.gov/data/METAR/KATT.1.txt</ob_url>
+      	<disclaimer_url>http://weather.gov/disclaimer.html</disclaimer_url>
+      	<copyright_url>http://weather.gov/disclaimer.html</copyright_url>
+      	<privacy_policy_url>http://weather.gov/notice.html</privacy_policy_url>
+      </current_observation>
+
+    http_version: "1.1"
