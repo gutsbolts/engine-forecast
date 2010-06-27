@@ -5,9 +5,7 @@ class TestCalculations < Test::Unit::TestCase
   def setup
     @calculations = EngineForecast::Calculations.new(observations)
   end
-  
-  
-  
+    
   correct_answers.each do |method, answer|
 
     # List of methods inside correct answers hash that are not exposed
@@ -22,21 +20,23 @@ class TestCalculations < Test::Unit::TestCase
   end
   
   def test_vapor_pressure_inches
-    # @calculations.metric = false
-    # assert_equal 0.780463233775887, round(@calculations.vapor_pressure, 15)
-    assert false
+    @calculations.metric = false
+    assert_equal 0.780463233775887, round(@calculations.vapor_pressure, 15)
   end
   
-  def test_actual_pressure_inches
-    assert false
+  def test_absolute_pressure_inches
+    @calculations.metric = false
+    assert_equal 29.4008221939348, round(@calculations.absolute_pressure, 13)
   end
   
   def test_virtual_temperature_fahrenheit
-    assert false  
+    @calculations.metric = false
+    assert_equal 95.1673006976555, round(@calculations.virtual_temperature, 13)
   end
 
-  def test_virtual_density_altitude_feet
-    assert false  
+  def test_density_altitude_feet
+    @calculations.metric = false
+    assert_equal 2874.0157524, round(@calculations.density_altitude, 7)
   end
   
 end
