@@ -1,5 +1,9 @@
 module EngineForecast
   
+  #
+  # Central broker to coordinate and collect data from various web service 
+  # calls.
+  #
   module ServicesBroker
     
     # 

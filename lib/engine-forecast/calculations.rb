@@ -1,7 +1,7 @@
 module EngineForecast
   
   #
-  # After being instantiated with a set of meterological and geological observations, 
+  # After getting instantiated with a set of meterological and geological observations, 
   # a Calculations object can determine a number of calculations related to engine
   # efficiency. 
   #

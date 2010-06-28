@@ -1,8 +1,10 @@
-require 'rubygems'
-require 'savon'
-
 module EngineForecast
   module Services    
+    
+    #
+    # Connects to the USGS web service to determine altitude base on the supplied  
+    # longitude and latitude.
+    #
     class USGSService
       
       WSDL = "http://gisdata.usgs.gov/xmlwebservices2/elevation_service.asmx?WSDL"
@@ -27,6 +29,9 @@ module EngineForecast
         end        
       end
       
+      #
+      # Extracts altitude out of the web service response.
+      #
       def self.extract_elevation(response)
         response.to_hash[:get_elevation_response][:get_elevation_result][:usgs_elevation_web_service_query][:elevation_query][:elevation]
       end

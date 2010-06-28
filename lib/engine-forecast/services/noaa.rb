@@ -1,8 +1,10 @@
-require 'rubygems'
-require 'noaa'
-
 module EngineForecast
   module Services    
+    
+    #
+    # Connects to NOAA via the awesome noaa gem and collects current conditions
+    # based on the supplied latitude and longitude.
+    #
     class NOAAService
       def self.collect(latitude, longitude)
         conditions = NOAA.current_conditions(latitude, longitude)
